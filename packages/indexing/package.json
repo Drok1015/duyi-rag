@@ -1,0 +1,29 @@
+{
+  "name": "@rag-sdk/indexing",
+  "version": "0.0.1",
+  "description": "RAG SDK - Indexing module",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist",
+    "dev": "tsup src/index.ts --format cjs,esm --dts --watch"
+  },
+  "dependencies": {
+    "@rag-sdk/core": "workspace:*",
+    "@rag-sdk/utils": "workspace:*"
+  },
+  "devDependencies": {}
+}
